@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+	font-family: "3d-sketches";
+	src: url("/fonts/3d-sketches-font/3d-sketches.ttf") format("truetype");
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.sketches {
+	font-family: "3d-sketches", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+	font-family: "bauhaus-sketch";
+	src: url("/fonts/bauhaus-sketch-font/bauhaus-sketch.ttf") format("truetype");
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.bauhaus {
+	font-family: "bauhaus-sketch", serif;
+}
+
+@font-face {
+	font-family: "hans-schoens";
+	src: url("/fonts/hans-schoens-font/hans-schoens.ttf") format("truetype");
+}
+
+.hans {
+	font-family: "hans-schoens", serif;
+}
+
+@font-face {
+	font-family: "kg-chasing-pavements";
+	src: url("/fonts/kg-chasing-pavements-font/kg-chasing-pavements.ttf")
+		format("truetype");
+}
+
+.kg-chasing {
+	font-family: "kg-chasing-pavements", sans-serif;
+}
+
+@font-face {
+	font-family: "mk-pixel-project";
+	src: url("/fonts/mk-pixel-project-font/mk-pixel-project.ttf")
+		format("truetype");
+}
+
+.mx-pixel {
+	font-family: "mk-pixel-project", sans-serif;
+}
+
+/* And this one */
+@font-face {
+	font-family: "romangridcaps";
+	src: url("/fonts/romangridcaps-font/romangridcaps.ttf") format("truetype");
+}
+
+.romangridcaps {
+	font-family: "romangridcaps", sans-serif;
+}
+
+/* This one */
+
+@font-face {
+	font-family: "sketches-by-duerer";
+	src: url("/fonts/sketches-by-duerer-font/sketches-by-duerer.ttf")
+		format("truetype");
+}
+
+.sketches-by-duerer {
+	font-family: "sketches-by-duerer", serif;
+}
+
+/* Interesting */
+@font-face {
+	font-family: "sketchiqua";
+	src: url("/fonts/sketchiqua-font/sketchiquaa.ttf") format("truetype");
+}
+
+.sketchiqua {
+	font-family: "sketchiqua", serif;
+}
+
+@font-face {
+	font-family: "typeboxesroundedtwo";
+	src: url("/fonts/typeboxesroundedtwo-font/typeboxesroundedtwo.ttf")
+		format("truetype");
+}
+
+.typeboxesroundedtwo {
+	font-family: "typeboxesroundedtwo", sans-serif;
 }
