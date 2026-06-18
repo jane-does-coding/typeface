@@ -10,6 +10,7 @@ export default function Home() {
 	const section2Ref = useRef<HTMLElement>(null);
 	const section3Ref = useRef<HTMLElement>(null);
 	const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+	const dragRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		const handleMouseMove = (e: MouseEvent) => {
@@ -90,13 +91,13 @@ export default function Home() {
 					opacity: 0.25,
 
 					maskImage: `radial-gradient(
-			circle 3vw at ${mousePos.x}px ${mousePos.y}px,
+			circle 3.5vw at ${mousePos.x}px ${mousePos.y}px,
 			black 0%,
 			transparent 100%
 		)`,
 
 					WebkitMaskImage: `radial-gradient(
-			circle 3vw at ${mousePos.x}px ${mousePos.y}px,
+			circle 3.5vw at ${mousePos.x}px ${mousePos.y}px,
 			black 0%,
 			transparent 100%
 		)`,
@@ -109,7 +110,7 @@ export default function Home() {
 			/>
 			<nav
 				onClick={() => setExpanded((prev) => !prev)}
-				className={`fixed top-0 right-0 w-[15vw] border-b border-l border-black rounded-bl-[0.3vh] overflow-hidden z-50 cursor-pointer transition-all duration-500 ease-in-out bg-white ${
+				className={`fixed top-0 right-0 w-[15vw] border-b-[0.2vh] border-l-[0.2vh] border-black rounded-bl-[0.3vh] overflow-hidden z-50 cursor-pointer transition-all duration-500 ease-in-out bg-white ${
 					expanded ? "h-[24vh]" : "h-[8vh]"
 				}`}
 			>
@@ -121,39 +122,65 @@ export default function Home() {
 							: `translateY(-${activeSection * 8}vh)`,
 					}}
 				>
-					<p className="h-[8vh] flex items-center justify-center text-[2.7vh] kg-chasing cursor-pointer border-b border-black">
+					<p className="h-[8vh] flex items-center justify-center text-[2.7vh] kg-chasing cursor-pointer border-b-[0.2vh] border-black">
 						What is it?
 					</p>
 
-					<p className="h-[8vh] flex items-center justify-center text-[2.7vh] kg-chasing cursor-pointer border-b border-black">
+					<p className="h-[8vh] flex items-center justify-center text-[2.7vh] kg-chasing cursor-pointer border-b-[0.2vh] border-black">
 						What to Submit?
 					</p>
 
-					<p className="h-[8vh] flex items-center justify-center text-[2.7vh] kg-chasing cursor-pointer border-b border-black">
+					<p className="h-[8vh] flex items-center justify-center text-[2.7vh] kg-chasing cursor-pointer border-b-[0.2vh] border-black">
 						FAQ
 					</p>
 				</div>
 			</nav>
 
 			{/* Horizontal Lines */}
-			<div className="w-full h-[0.1vh] z-5 bg-black absolute top-[3vh]"></div>
-			<div className="w-full h-[0.1vh] z-5 bg-black absolute top-[3.75vh]"></div>
-			<div className="w-full h-[0.1vh] z-5 bg-black absolute bottom-[3vh]"></div>
-			<div className="w-full h-[0.1vh] z-5 bg-black absolute bottom-[3.75vh]"></div>
+			<div className="w-full h-[0.2vh] z-5 bg-black absolute top-[3vh]"></div>
+			<div className="w-full h-[0.2vh] z-5 bg-black absolute top-[3.75vh]"></div>
+			<div className="w-full h-[0.2vh] z-5 bg-black absolute bottom-[3vh]"></div>
+			<div className="w-full h-[0.2vh] z-5 bg-black absolute bottom-[3.75vh]"></div>
 
 			{/* Vertical Lines */}
 
-			<div className="h-screen fixed top-0 left-[1.75vw] w-[0.1vh] z-5 bg-black"></div>
-			<div className="h-screen fixed top-0 left-[2.25vw] w-[0.1vh] z-5 bg-black"></div>
+			<div className="h-screen fixed top-0 left-[1.75vw] w-[0.2vh] z-5 bg-black"></div>
+			<div className="h-screen fixed top-0 left-[2.25vw] w-[0.2vh] z-5 bg-black"></div>
 
-			<div className="h-screen fixed top-0 right-[1.75vw] w-[0.1vh] z-5 bg-black"></div>
-			<div className="h-screen fixed top-0 right-[2.25vw] w-[0.1vh] z-5 bg-black"></div>
+			<div className="h-screen fixed top-0 right-[1.75vw] w-[0.2vh] z-5 bg-black"></div>
+			<div className="h-screen fixed top-0 right-[2.25vw] w-[0.2vh] z-5 bg-black"></div>
 
-			<section ref={section1Ref} className="min-h-screen relative z-2">
-				<h2 className="text-left ml-[12vw] kg-chasing text-[6vh] pt-[18vh]">
+			<section ref={section1Ref} className="min-h-screen relative z-6">
+				<div ref={dragRef} className="absolute inset-0 pointer-events-none" />
+				<motion.div
+					drag
+					dragMomentum={false}
+					whileHover={{ scale: 1.05 }}
+					whileTap={{ scale: 1.02 }}
+					className="absolute bottom-[10vh] left-[6vw] z-[999] cursor-grab"
+				>
+					<motion.div
+						className="p-[0.2vh] border-[0.2vh] rounded-[0.2vh] drop-shadow-md drop-shadow-neutral-800/50"
+						initial={{ rotate: -8 }}
+						animate={{
+							y: [0, -8, 0],
+							rotate: [-8, -6, -8],
+						}}
+						transition={{
+							duration: 4,
+							repeat: Infinity,
+							ease: "easeInOut",
+						}}
+					>
+						<p className="text-[8vh] sketches bg-black text-white px-[1vw] pt-[1vh] leading-[8vh] rounded-[0.2vh]">
+							A
+						</p>
+					</motion.div>
+				</motion.div>
+				<h2 className="text-left ml-[12vw] kg-chasing text-[6vh] pt-[15vh]">
 					Ptss
 				</h2>
-				<h1 className="sketches-by-duerer text-[15vh] mx-auto w-fit mt-[-2vh]">
+				<h1 className="sketches-by-duerer text-[17.5vh] mx-auto w-fit mt-[-2vh]">
 					typeface
 				</h1>
 				<h2 className="text-left ml-[27vw] mx-pixel text-[8vh] mt-[-2vh]">
@@ -192,7 +219,7 @@ export default function Home() {
 				{/* <h2 className="text-left ml-[46vw] city-of-boy text-[8vh] font-semibold mt-[-2vh]">
 					Submit
 				</h2> */}
-				<div className="p-[0.4vh] border min-w-fit w-fit min-h-fit relative ml-[46vw] mt-[1vh] rounded-[0.2vh] cursor-pointer">
+				<div className="p-[0.4vh] border-[0.2vh] min-w-fit w-fit min-h-fit relative ml-[46vw] mt-[1vh] rounded-[0.2vh] cursor-pointer">
 					<p className="city-of-boy w-fit text-[5vh] px-[2vw] py-[0.5vh] relative rounded-[0.2vh] w-fit bg-black text-white">
 						Submit
 					</p>
@@ -200,7 +227,7 @@ export default function Home() {
 			</section>
 
 			<div className="flex w-[100vw] mx-auto items-center justify-between gap-[0.75vh] mt-[-3vh] bg-white relative z-2">
-				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-r border-black py-[3vh]">
+				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-r-[0.2vh] border-black py-[3vh]">
 					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
 						1 Hour
 					</p>
@@ -208,27 +235,27 @@ export default function Home() {
 						Custom Stickers!!!
 					</p>
 				</div>
-				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-x border-black py-[3vh]">
+				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-x-[0.2vh] border-black py-[3vh]">
 					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
 						5 Hours
 					</p>
 					<p className="kg-chasing text-[2.5vh] text-center">Plushie</p>
 				</div>
-				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-x border-black py-[3vh]">
+				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-x-[0.2vh] border-black py-[3vh]">
 					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
 						10 Hours
 					</p>
 					<p className="kg-chasing text-[2.5vh] text-center">T-Shirt</p>
 				</div>
-				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-l border-black py-[3vh]">
+				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-l-[0.2vh] border-black py-[3vh]">
 					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
 						15 Hours
 					</p>
 					<p className="kg-chasing text-[2.5vh] text-center">eReader</p>
 				</div>
 			</div>
-			<div className="w-full h-[0.1vh] bg-black relative z-2"></div>
-			<div className="w-full h-[0.1vh] bg-black mt-[0.75vh] relative z-2"></div>
+			<div className="w-full h-[0.2vh] bg-black relative z-2"></div>
+			<div className="w-full h-[0.2vh] bg-black mt-[0.75vh] relative z-2"></div>
 
 			<section
 				ref={section2Ref}
