@@ -9,6 +9,22 @@ export default function Home() {
 	const section1Ref = useRef<HTMLElement>(null);
 	const section2Ref = useRef<HTMLElement>(null);
 	const section3Ref = useRef<HTMLElement>(null);
+	const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+	useEffect(() => {
+		const handleMouseMove = (e: MouseEvent) => {
+			setMousePos({
+				x: e.clientX,
+				y: e.clientY,
+			});
+		};
+
+		window.addEventListener("mousemove", handleMouseMove);
+
+		return () => {
+			window.removeEventListener("mousemove", handleMouseMove);
+		};
+	}, []);
 
 	const floatingAnimation = {
 		animate: {
@@ -61,8 +77,30 @@ export default function Home() {
 		<div className="min-h-screen w-full">
 			<img
 				src="/imgs/texture-bg.png"
-				className="w-full h-screen fixed top-0 left-0 z-0 opacity-5"
+				className="w-full h-screen fixed top-0 left-0 z-0 opacity-[4%] pointer-events-none"
 				alt=""
+			/>
+
+			<div
+				className="fixed inset-0 z-0 pointer-events-none"
+				style={{
+					backgroundImage: "url('/imgs/texture-bg.png')",
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+					opacity: 0.25,
+
+					maskImage: `radial-gradient(
+			circle 3vw at ${mousePos.x}px ${mousePos.y}px,
+			black 0%,
+			transparent 100%
+		)`,
+
+					WebkitMaskImage: `radial-gradient(
+			circle 3vw at ${mousePos.x}px ${mousePos.y}px,
+			black 0%,
+			transparent 100%
+		)`,
+				}}
 			/>
 			<img
 				src="/imgs/hackclub.svg"
