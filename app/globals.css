@@ -88,3 +88,39 @@
 .typeboxesroundedtwo {
 	font-family: "typeboxesroundedtwo", sans-serif;
 }
+
+@font-face {
+	font-family: "constru-caps";
+	src: url("/fonts/constru-caps-font/constru-caps.ttf") format("truetype");
+}
+
+.constru-caps {
+	font-family: "constru-caps", serif;
+}
+
+@font-face {
+	font-family: "city-of-boy";
+	src: url("/fonts/city-of-boy-font/city-of-boy.ttf") format("truetype");
+}
+
+.city-of-boy {
+	font-family: "city-of-boy", serif;
+}
+
+@font-face {
+	font-family: "abeda";
+	src: url("/fonts/abeda-font/abeda.ttf") format("truetype");
+}
+
+.abeda {
+	font-family: "abeda", sans-serif;
+}
+
+@font-face {
+	font-family: "twist-of-black";
+	src: url("/fonts/twist-of-black-font/twist-of-black.otf") format("opentype");
+}
+
+.twist-of-black {
+	font-family: "twist-of-black", serif;
+}
