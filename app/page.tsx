@@ -157,7 +157,7 @@ export default function Home() {
 					dragMomentum={false}
 					whileHover={{ scale: 1.05 }}
 					whileTap={{ scale: 1.02 }}
-					className="absolute bottom-[10vh] left-[6vw] z-[999] cursor-grab"
+					className="absolute bottom-[27vh] left-[7vw] z-[999] cursor-grab"
 				>
 					<motion.div
 						className="p-[0.2vh] border-[0.2vh] rounded-[0.2vh] drop-shadow-md drop-shadow-neutral-800/50"
@@ -173,7 +173,82 @@ export default function Home() {
 						}}
 					>
 						<p className="text-[8vh] sketches bg-black text-white px-[1vw] pt-[1vh] leading-[8vh] rounded-[0.2vh]">
+							H
+						</p>
+					</motion.div>
+				</motion.div>
+				<motion.div
+					drag
+					dragMomentum={false}
+					whileHover={{ scale: 1.05 }}
+					whileTap={{ scale: 1.02 }}
+					className="absolute bottom-[16vh] left-[12vw] z-[999] cursor-grab"
+				>
+					<motion.div
+						className="p-[0.2vh] border-[0.2vh] rounded-[0.2vh] drop-shadow-md drop-shadow-neutral-800/50"
+						initial={{ rotate: 8 }}
+						animate={{
+							y: [0, -8, 0],
+							rotate: [8, 6, 8],
+						}}
+						transition={{
+							duration: 4,
+							repeat: Infinity,
+							ease: "easeInOut",
+						}}
+					>
+						<p className="text-[8vh] sketches bg-black text-white px-[1vw] pt-[1vh] leading-[8vh] rounded-[0.2vh]">
 							A
+						</p>
+					</motion.div>
+				</motion.div>
+				<motion.div
+					drag
+					dragMomentum={false}
+					whileHover={{ scale: 1.05 }}
+					whileTap={{ scale: 1.02 }}
+					className="absolute bottom-[22vh] left-[20vw] z-[999] cursor-grab"
+				>
+					<motion.div
+						className="p-[0.2vh] border-[0.2vh] rounded-[0.2vh] drop-shadow-md drop-shadow-neutral-800/50"
+						initial={{ rotate: 4 }}
+						animate={{
+							y: [0, -8, 0],
+							rotate: [4, 2, 4],
+						}}
+						transition={{
+							duration: 4,
+							repeat: Infinity,
+							ease: "easeInOut",
+						}}
+					>
+						<p className="text-[8vh] sketches bg-black text-white px-[1vw] pt-[1vh] leading-[8vh] rounded-[0.2vh]">
+							C
+						</p>
+					</motion.div>
+				</motion.div>
+				<motion.div
+					drag
+					dragMomentum={false}
+					whileHover={{ scale: 1.05 }}
+					whileTap={{ scale: 1.02 }}
+					className="absolute bottom-[18vh] left-[28vw] z-[999] cursor-grab"
+				>
+					<motion.div
+						className="p-[0.2vh] border-[0.2vh] rounded-[0.2vh] drop-shadow-md drop-shadow-neutral-800/50"
+						initial={{ rotate: 8 }}
+						animate={{
+							y: [0, -8, 0],
+							rotate: [8, 6, 8],
+						}}
+						transition={{
+							duration: 4,
+							repeat: Infinity,
+							ease: "easeInOut",
+						}}
+					>
+						<p className="text-[8vh] sketches bg-black text-white px-[1vw] pt-[1vh] leading-[8vh] rounded-[0.2vh]">
+							K
 						</p>
 					</motion.div>
 				</motion.div>
