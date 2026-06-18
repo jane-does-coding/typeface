@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
@@ -9,6 +9,19 @@ export default function Home() {
 	const section1Ref = useRef<HTMLElement>(null);
 	const section2Ref = useRef<HTMLElement>(null);
 	const section3Ref = useRef<HTMLElement>(null);
+
+	const floatingAnimation = {
+		animate: {
+			y: [0, -10, 5, -8, 0],
+			x: [0, 4, -3, 2, 0],
+			rotate: [0, 2, -1.5, 1, 0],
+		},
+		transition: {
+			duration: 12,
+			repeat: Infinity,
+			ease: "easeInOut",
+		},
+	};
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -42,6 +55,8 @@ export default function Home() {
 		};
 	}, []);
 
+	const letters = "Made a font?".split("");
+
 	return (
 		<div className="min-h-screen w-full">
 			<img
@@ -51,7 +66,7 @@ export default function Home() {
 			/>
 			<nav
 				onClick={() => setExpanded((prev) => !prev)}
-				className={`fixed top-0 right-0 w-[13vw] border-b border-l border-black rounded-bl-[0.3vh] overflow-hidden z-50 cursor-pointer transition-all duration-500 ease-in-out bg-white ${
+				className={`fixed top-0 right-0 w-[15vw] border-b border-l border-black rounded-bl-[0.3vh] overflow-hidden z-50 cursor-pointer transition-all duration-500 ease-in-out bg-white ${
 					expanded ? "h-[24vh]" : "h-[8vh]"
 				}`}
 			>
@@ -68,7 +83,7 @@ export default function Home() {
 					</p>
 
 					<p className="h-[8vh] flex items-center justify-center text-[2.7vh] kg-chasing cursor-pointer border-b border-black">
-						How is it?
+						What to Submit?
 					</p>
 
 					<p className="h-[8vh] flex items-center justify-center text-[2.7vh] kg-chasing cursor-pointer border-b border-black">
@@ -101,8 +116,35 @@ export default function Home() {
 				<h2 className="text-left ml-[27vw] mx-pixel text-[8vh] mt-[-2vh]">
 					Have you ever....
 				</h2>
-				<h2 className="text-left ml-[57vw] sketches text-[8vh] font-semibold">
-					Made a font?
+				<h2 className="text-left ml-[57vw] sketches text-[8vh] font-semibold flex">
+					{letters.map((letter, index) => {
+						const y1 = Math.random() * 8 - 4;
+						const y2 = Math.random() * 12 - 6;
+						const r1 = Math.random() * 4 - 2;
+						const r2 = Math.random() * 4 - 2;
+						const x1 = Math.random() * 4 - 2;
+						const x2 = Math.random() * 4 - 2;
+
+						return (
+							<motion.span
+								key={index}
+								className="inline-block"
+								animate={{
+									y: [0, y1, y2, 0],
+									x: [0, x1, x2, 0],
+									rotate: [0, r1, r2, 0],
+								}}
+								transition={{
+									duration: 2 + Math.random() * 2,
+									repeat: Infinity,
+									repeatType: "mirror",
+									ease: "easeInOut",
+								}}
+							>
+								{letter === " " ? "\u00A0" : letter}
+							</motion.span>
+						);
+					})}
 				</h2>
 				{/* <h2 className="text-left ml-[46vw] city-of-boy text-[8vh] font-semibold mt-[-2vh]">
 					Submit
@@ -114,26 +156,38 @@ export default function Home() {
 				</div>
 			</section>
 
-			<div className="flex w-[80vw] mx-auto items-center justify-between">
-				<p>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-					Necessitatibus, harum.
-				</p>
-				<p>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-					Necessitatibus, harum.
-				</p>
-				<p>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-					Necessitatibus, harum.
-				</p>
+			<div className="flex w-[100vw] mx-auto items-center justify-between gap-[0.75vh] mt-[-3vh]">
+				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-r border-black py-[3vh]">
+					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
+						1 Hour
+					</p>
+					<p className="kg-chasing text-[2.5vh] text-center">
+						Custom Stickers!!!
+					</p>
+				</div>
+				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-x border-black py-[3vh]">
+					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
+						3 Hours
+					</p>
+					<p className="kg-chasing text-[2.5vh] text-center">
+						Custom Mini Zine
+					</p>
+				</div>
+				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-l border-black py-[3vh]">
+					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
+						5+ Hours
+					</p>
+					<p className="kg-chasing text-[2.5vh] text-center">
+						Idk, just something
+					</p>
+				</div>
 			</div>
-			<div className="w-full h-[0.1vh] bg-black mt-[5vh]"></div>
+			<div className="w-full h-[0.1vh] bg-black"></div>
 			<div className="w-full h-[0.1vh] bg-black mt-[0.75vh]"></div>
 
 			<section
 				ref={section2Ref}
-				className="min-h-fit flex flex-col items-center justify-center max-w-[80vw] mx-auto mt-[12vh]"
+				className="min-h-fit flex flex-col items-center justify-center max-w-[80vw] mx-auto mt-[14vh]"
 			>
 				<div className="flex gap-[5vw] w-[70vw] items-start justify-between">
 					<div className="text-left flex flex-col items-start justify-center">
@@ -148,15 +202,34 @@ export default function Home() {
 						</div>
 					</div>
 					<div className="relative">
-						<img
+						<motion.img
 							src="/imgs/fonts.png"
-							className="w-[27.5vw] rounded-[0.3vh] border border-black absolute bottom-[-17.5vh] left-[-17.5vw]"
+							className="w-[27.5vw] rounded-[0.3vh] drop-shadow-md drop-shadow-neutral-800/30 border border-black absolute bottom-[-17.5vh] left-[-17.5vw] z-2"
 							alt=""
+							animate={{
+								y: [0, -8, 0],
+								rotate: [0, 1, 0],
+							}}
+							transition={{
+								duration: 4,
+								repeat: Infinity,
+								ease: "easeInOut",
+								delay: 1,
+							}}
 						/>
-						<img
+						<motion.img
 							src="/imgs/template.png"
-							className="w-[27.5vw] rounded-[0.3vh] border border-black mt-[-5vh]"
+							className="w-[27.5vw] rounded-[0.3vh] drop-shadow-md drop-shadow-neutral-800/30 border border-black mt-[-5vh] z-1"
 							alt=""
+							animate={{
+								y: [0, 9, 0],
+								rotate: [0, -1.5, 0],
+							}}
+							transition={{
+								duration: 5.5,
+								repeat: Infinity,
+								ease: "easeInOut",
+							}}
 						/>
 					</div>
 				</div>
@@ -164,30 +237,83 @@ export default function Home() {
 					Make a Website to show it off
 				</h2>
 				<div className="flex-5 relative flex mt-[10vh]">
-					<img
+					<motion.img
 						src="/imgs/example1.png"
-						className="w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] border border-black z-5"
+						className="w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] drop-shadow-md drop-shadow-neutral-800/30  border border-black z-5"
 						alt=""
+						animate={{
+							y: [0, -8, 0],
+							rotate: [0, 1, 0],
+						}}
+						transition={{
+							duration: 3,
+							repeat: Infinity,
+							ease: "easeInOut",
+						}}
 					/>
-					<img
+
+					<motion.img
 						src="/imgs/example2.png"
-						className="w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] border border-black ml-[-12vw] mt-[23vh] z-4"
+						className="w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] drop-shadow-md drop-shadow-neutral-800/30  border border-black ml-[-12vw] mt-[23vh] z-4"
 						alt=""
+						animate={{
+							y: [0, 6, 0],
+							rotate: [0, -1.5, 0],
+						}}
+						transition={{
+							duration: 4,
+							repeat: Infinity,
+							ease: "easeInOut",
+							delay: 0.5,
+						}}
 					/>
-					<img
+
+					<motion.img
 						src="/imgs/example3.png"
-						className="w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] border border-black ml-[-11vw] z-3"
+						className="w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] drop-shadow-md drop-shadow-neutral-800/30  border border-black ml-[-11vw] z-3"
 						alt=""
+						animate={{
+							y: [0, -10, 0],
+							rotate: [0, 1.2, 0],
+						}}
+						transition={{
+							duration: 3.5,
+							repeat: Infinity,
+							ease: "easeInOut",
+							delay: 1,
+						}}
 					/>
-					<img
+
+					<motion.img
 						src="/imgs/example4.png"
-						className="w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] border border-black ml-[-14vw] mt-[23vh] z-2"
+						className="w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] drop-shadow-md drop-shadow-neutral-800/30  border border-black ml-[-14vw] mt-[23vh] z-2"
 						alt=""
+						animate={{
+							y: [0, 8, 0],
+							rotate: [0, -1.2, 0],
+						}}
+						transition={{
+							duration: 4.5,
+							repeat: Infinity,
+							ease: "easeInOut",
+							delay: 0.3,
+						}}
 					/>
-					<img
+
+					<motion.img
 						src="/imgs/example5.png"
-						className="w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] border border-black ml-[-11vw] z-1"
+						className="w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] drop-shadow-md drop-shadow-neutral-800/30  border border-black ml-[-11vw] z-1"
 						alt=""
+						animate={{
+							y: [0, -7, 0],
+							rotate: [0, 1, 0],
+						}}
+						transition={{
+							duration: 3.8,
+							repeat: Infinity,
+							ease: "easeInOut",
+							delay: 0.8,
+						}}
 					/>
 				</div>
 			</section>
