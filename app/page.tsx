@@ -60,8 +60,13 @@ export default function Home() {
 	return (
 		<div className="min-h-screen w-full">
 			<img
+				src="/imgs/texture-bg.png"
+				className="w-full h-screen fixed top-0 left-0 z-0 opacity-5"
+				alt=""
+			/>
+			<img
 				src="/imgs/hackclub.svg"
-				className="absolute left-[1vw] top-[0vh] w-[12vw] z-5"
+				className="absolute left-[1vw] top-[0vh] w-[12vw] z-10"
 				alt=""
 			/>
 			<nav
@@ -93,25 +98,25 @@ export default function Home() {
 			</nav>
 
 			{/* Horizontal Lines */}
-			<div className="w-full h-[0.1vh] bg-black absolute top-[3vh]"></div>
-			<div className="w-full h-[0.1vh] bg-black absolute top-[3.75vh]"></div>
-			<div className="w-full h-[0.1vh] bg-black absolute bottom-[3vh]"></div>
-			<div className="w-full h-[0.1vh] bg-black absolute bottom-[3.75vh]"></div>
+			<div className="w-full h-[0.1vh] z-5 bg-black absolute top-[3vh]"></div>
+			<div className="w-full h-[0.1vh] z-5 bg-black absolute top-[3.75vh]"></div>
+			<div className="w-full h-[0.1vh] z-5 bg-black absolute bottom-[3vh]"></div>
+			<div className="w-full h-[0.1vh] z-5 bg-black absolute bottom-[3.75vh]"></div>
 
 			{/* Vertical Lines */}
 
-			<div className="h-screen fixed top-0 left-[1.75vw] w-[0.1vh] bg-black"></div>
-			<div className="h-screen fixed top-0 left-[2.25vw] w-[0.1vh] bg-black"></div>
+			<div className="h-screen fixed top-0 left-[1.75vw] w-[0.1vh] z-5 bg-black"></div>
+			<div className="h-screen fixed top-0 left-[2.25vw] w-[0.1vh] z-5 bg-black"></div>
 
-			<div className="h-screen fixed top-0 right-[1.75vw] w-[0.1vh] bg-black"></div>
-			<div className="h-screen fixed top-0 right-[2.25vw] w-[0.1vh] bg-black"></div>
+			<div className="h-screen fixed top-0 right-[1.75vw] w-[0.1vh] z-5 bg-black"></div>
+			<div className="h-screen fixed top-0 right-[2.25vw] w-[0.1vh] z-5 bg-black"></div>
 
-			<section ref={section1Ref} className="min-h-screen">
+			<section ref={section1Ref} className="min-h-screen relative z-2">
 				<h2 className="text-left ml-[12vw] kg-chasing text-[6vh] pt-[18vh]">
 					Ptss
 				</h2>
 				<h1 className="sketches-by-duerer text-[15vh] mx-auto w-fit mt-[-2vh]">
-					typography
+					typeface
 				</h1>
 				<h2 className="text-left ml-[27vw] mx-pixel text-[8vh] mt-[-2vh]">
 					Have you ever....
@@ -156,7 +161,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<div className="flex w-[100vw] mx-auto items-center justify-between gap-[0.75vh] mt-[-3vh]">
+			<div className="flex w-[100vw] mx-auto items-center justify-between gap-[0.75vh] mt-[-3vh] bg-white relative z-2">
 				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-r border-black py-[3vh]">
 					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
 						1 Hour
@@ -167,27 +172,29 @@ export default function Home() {
 				</div>
 				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-x border-black py-[3vh]">
 					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
-						3 Hours
+						5 Hours
 					</p>
-					<p className="kg-chasing text-[2.5vh] text-center">
-						Custom Mini Zine
+					<p className="kg-chasing text-[2.5vh] text-center">Plushie</p>
+				</div>
+				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-x border-black py-[3vh]">
+					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
+						10 Hours
 					</p>
+					<p className="kg-chasing text-[2.5vh] text-center">T-Shirt</p>
 				</div>
 				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-l border-black py-[3vh]">
 					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
-						5+ Hours
+						15 Hours
 					</p>
-					<p className="kg-chasing text-[2.5vh] text-center">
-						Idk, just something
-					</p>
+					<p className="kg-chasing text-[2.5vh] text-center">eReader</p>
 				</div>
 			</div>
-			<div className="w-full h-[0.1vh] bg-black"></div>
-			<div className="w-full h-[0.1vh] bg-black mt-[0.75vh]"></div>
+			<div className="w-full h-[0.1vh] bg-black relative z-2"></div>
+			<div className="w-full h-[0.1vh] bg-black mt-[0.75vh] relative z-2"></div>
 
 			<section
 				ref={section2Ref}
-				className="min-h-fit flex flex-col items-center justify-center max-w-[80vw] mx-auto mt-[14vh]"
+				className="min-h-fit flex flex-col items-center justify-center max-w-[80vw] mx-auto mt-[14vh] relative z-2"
 			>
 				<div className="flex gap-[5vw] w-[70vw] items-start justify-between">
 					<div className="text-left flex flex-col items-start justify-center">
@@ -320,7 +327,7 @@ export default function Home() {
 
 			<section
 				ref={section3Ref}
-				className="min-h-screen flex items-center justify-center"
+				className="min-h-screen flex items-center justify-center relative z-2"
 			>
 				<p className="text-[6vh] constru-caps">FAQ</p>
 			</section>
