@@ -124,3 +124,8 @@
 .twist-of-black {
 	font-family: "twist-of-black", serif;
 }
+
+img {
+	user-select: none !important;
+	-webkit-user-select: none !important;
+}

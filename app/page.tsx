@@ -1,6 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Letter from "./components/Letter";
+import Floating from "./components/FloatingImage";
+import FAQDragSection from "./components/FAQsection";
 
 export default function Home() {
 	const [activeSection, setActiveSection] = useState(0);
@@ -110,7 +113,7 @@ export default function Home() {
 			/>
 			<nav
 				onClick={() => setExpanded((prev) => !prev)}
-				className={`fixed top-0 right-0 w-[15vw] border-b-[0.2vh] border-l-[0.2vh] border-black rounded-bl-[0.3vh] overflow-hidden z-50 cursor-pointer transition-all duration-500 ease-in-out bg-white ${
+				className={`fixed top-0 right-0 w-[16vw] border-b-[0.2vh] border-l-[0.2vh] border-black rounded-bl-[0.3vh] overflow-hidden z-50 cursor-pointer transition-all duration-500 ease-in-out bg-white ${
 					expanded ? "h-[24vh]" : "h-[8vh]"
 				}`}
 			>
@@ -123,7 +126,7 @@ export default function Home() {
 					}}
 				>
 					<p className="h-[8vh] flex items-center justify-center text-[2.7vh] kg-chasing cursor-pointer border-b-[0.2vh] border-black">
-						What is it?
+						Drag the Letters
 					</p>
 
 					<p className="h-[8vh] flex items-center justify-center text-[2.7vh] kg-chasing cursor-pointer border-b-[0.2vh] border-black">
@@ -152,116 +155,27 @@ export default function Home() {
 
 			<section ref={section1Ref} className="min-h-screen relative z-6">
 				<div ref={dragRef} className="absolute inset-0 pointer-events-none" />
-				<motion.div
-					drag
-					dragMomentum={false}
-					whileHover={{ scale: 1.05 }}
-					whileTap={{ scale: 1.02 }}
-					className="absolute bottom-[27vh] left-[7vw] z-[999] cursor-grab"
-				>
-					<motion.div
-						className="p-[0.2vh] border-[0.2vh] rounded-[0.2vh] drop-shadow-md drop-shadow-neutral-800/50"
-						initial={{ rotate: -8 }}
-						animate={{
-							y: [0, -8, 0],
-							rotate: [-8, -6, -8],
-						}}
-						transition={{
-							duration: 4,
-							repeat: Infinity,
-							ease: "easeInOut",
-						}}
-					>
-						<p className="text-[8vh] sketches bg-black text-white px-[1vw] pt-[1vh] leading-[8vh] rounded-[0.2vh]">
-							H
-						</p>
-					</motion.div>
-				</motion.div>
-				<motion.div
-					drag
-					dragMomentum={false}
-					whileHover={{ scale: 1.05 }}
-					whileTap={{ scale: 1.02 }}
-					className="absolute bottom-[16vh] left-[12vw] z-[999] cursor-grab"
-				>
-					<motion.div
-						className="p-[0.2vh] border-[0.2vh] rounded-[0.2vh] drop-shadow-md drop-shadow-neutral-800/50"
-						initial={{ rotate: 8 }}
-						animate={{
-							y: [0, -8, 0],
-							rotate: [8, 6, 8],
-						}}
-						transition={{
-							duration: 4,
-							repeat: Infinity,
-							ease: "easeInOut",
-						}}
-					>
-						<p className="text-[8vh] sketches bg-black text-white px-[1vw] pt-[1vh] leading-[8vh] rounded-[0.2vh]">
-							A
-						</p>
-					</motion.div>
-				</motion.div>
-				<motion.div
-					drag
-					dragMomentum={false}
-					whileHover={{ scale: 1.05 }}
-					whileTap={{ scale: 1.02 }}
-					className="absolute bottom-[22vh] left-[20vw] z-[999] cursor-grab"
-				>
-					<motion.div
-						className="p-[0.2vh] border-[0.2vh] rounded-[0.2vh] drop-shadow-md drop-shadow-neutral-800/50"
-						initial={{ rotate: 4 }}
-						animate={{
-							y: [0, -8, 0],
-							rotate: [4, 2, 4],
-						}}
-						transition={{
-							duration: 4,
-							repeat: Infinity,
-							ease: "easeInOut",
-						}}
-					>
-						<p className="text-[8vh] sketches bg-black text-white px-[1vw] pt-[1vh] leading-[8vh] rounded-[0.2vh]">
-							C
-						</p>
-					</motion.div>
-				</motion.div>
-				<motion.div
-					drag
-					dragMomentum={false}
-					whileHover={{ scale: 1.05 }}
-					whileTap={{ scale: 1.02 }}
-					className="absolute bottom-[18vh] left-[28vw] z-[999] cursor-grab"
-				>
-					<motion.div
-						className="p-[0.2vh] border-[0.2vh] rounded-[0.2vh] drop-shadow-md drop-shadow-neutral-800/50"
-						initial={{ rotate: 8 }}
-						animate={{
-							y: [0, -8, 0],
-							rotate: [8, 6, 8],
-						}}
-						transition={{
-							duration: 4,
-							repeat: Infinity,
-							ease: "easeInOut",
-						}}
-					>
-						<p className="text-[8vh] sketches bg-black text-white px-[1vw] pt-[1vh] leading-[8vh] rounded-[0.2vh]">
-							K
-						</p>
-					</motion.div>
-				</motion.div>
-				<h2 className="text-left ml-[12vw] kg-chasing text-[6vh] pt-[15vh]">
+
+				<Letter letter="H" left="7vw" bottom="27vh" rotation={-8} />
+				<Letter letter="A" left="12vw" bottom="16vh" rotation={8} />
+				<Letter letter="C" left="20vw" bottom="22vh" rotation={4} />
+				<Letter letter="K" left="28vw" bottom="18vh" rotation={8} />
+
+				<Letter letter="C" left="54vw" bottom="82vh" rotation={-8} />
+				<Letter letter="L" left="62vw" bottom="76vh" rotation={8} />
+				<Letter letter="U" left="69vw" bottom="78vh" rotation={2} />
+				<Letter letter="B" left="78vw" bottom="80vh" rotation={8} />
+
+				<h2 className="text-left ml-[12vw] kg-chasing text-[6vh] pt-[20vh]">
 					Ptss
 				</h2>
-				<h1 className="sketches-by-duerer text-[17.5vh] mx-auto w-fit mt-[-2vh]">
+				<h1 className="sketches-by-duerer text-[17.5vh] mx-auto w-fit mt-[-3vh]">
 					typeface
 				</h1>
-				<h2 className="text-left ml-[27vw] mx-pixel text-[8vh] mt-[-2vh]">
+				<h2 className="text-left ml-[27vw] mx-pixel text-[8vh] mt-[-3vh]">
 					Have you ever....
 				</h2>
-				<h2 className="text-left ml-[57vw] sketches text-[8vh] font-semibold flex">
+				<h2 className="text-left ml-[57vw] sketches text-[8vh] font-semibold flex mt-[-1vh]">
 					{letters.map((letter, index) => {
 						const y1 = Math.random() * 8 - 4;
 						const y2 = Math.random() * 12 - 6;
@@ -294,7 +208,7 @@ export default function Home() {
 				{/* <h2 className="text-left ml-[46vw] city-of-boy text-[8vh] font-semibold mt-[-2vh]">
 					Submit
 				</h2> */}
-				<div className="p-[0.4vh] border-[0.2vh] min-w-fit w-fit min-h-fit relative ml-[46vw] mt-[1vh] rounded-[0.2vh] cursor-pointer">
+				<div className="p-[0.4vh] border-[0.2vh] min-w-fit w-fit min-h-fit relative ml-[46vw] mt-[1vh] rounded-[0.2vh] cursor-pointer bg-white">
 					<p className="city-of-boy w-fit text-[5vh] px-[2vw] py-[0.5vh] relative rounded-[0.2vh] w-fit bg-black text-white">
 						Submit
 					</p>
@@ -334,37 +248,49 @@ export default function Home() {
 
 			<section
 				ref={section2Ref}
-				className="min-h-fit flex flex-col items-center justify-center max-w-[80vw] mx-auto mt-[14vh] relative z-2"
+				className="min-h-fit flex flex-col items-center justify-center max-w-[80vw] mx-auto mt-[14vh] relative z-5"
 			>
+				<Letter letter="H" left="-3vw" bottom="108vh" rotation={-8} />
+				<Letter letter="E" left="1vw" bottom="87vh" rotation={8} />
+				<Letter letter="I" left="7vw" bottom="99vh" rotation={-5} />
+				<Letter letter="D" left="10vw" bottom="85vh" rotation={5} />
+				<Letter letter="I" left="18vw" bottom="78vh" rotation={-9} />
+
+				<Letter letter="H" left="70vw" bottom="77vh" rotation={-8} />
+				<Letter letter="I" left="77vw" bottom="88vh" rotation={8} />
+
+				<Letter letter="!" left="78vw" bottom="145vh" rotation={-8} />
+
 				<div className="flex gap-[5vw] w-[70vw] items-start justify-between">
-					<div className="text-left flex flex-col items-start justify-center">
+					<div className="text-left flex flex-col items-start justify-start min-w-fit w-full">
 						<h2 className="text-[8vh] abeda">Create a Font</h2>
 						<p className="sketches-by-duerer text-[7.5vh] w-fit mt-[-1vh]">
 							learning
 						</p>
-						<div className="p-[0.4vh] border mt-[3vh] min-w-fit min-h-fit relative cursor-pointer rounded-[0.2vh]">
+						<div className="p-[0.4vh] border mt-[3vh] min-w-fit min-h-fit relative cursor-pointer rounded-[0.2vh] bg-white">
 							<p className="mx-pixel text-[5vh] px-[2vw] py-[0.5vh] relative rounded-[0.2vh] w-fit bg-black text-white">
 								guide
 							</p>
 						</div>
 					</div>
-					<div className="relative">
-						<motion.img
-							src="/imgs/fonts.png"
-							className="w-[27.5vw] rounded-[0.3vh] drop-shadow-md drop-shadow-neutral-800/30 border border-black absolute bottom-[-17.5vh] left-[-17.5vw] z-2"
-							alt=""
-							animate={{
-								y: [0, -8, 0],
-								rotate: [0, 1, 0],
-							}}
-							transition={{
-								duration: 4,
-								repeat: Infinity,
-								ease: "easeInOut",
-								delay: 1,
-							}}
-						/>
-						<motion.img
+					<div className="relative min-h-[60vh] w-full">
+						<Floating left="0" bottom="-3vh" rotation={1}>
+							<img
+								src="/imgs/template.png"
+								draggable={false}
+								className="pointer-events-none w-[28vw] min-w-[28vw] rounded-[0.3vh] border border-black"
+								alt=""
+							/>
+						</Floating>
+						<Floating left="-17vw" bottom="-8vh" rotation={5}>
+							<img
+								src="/imgs/fonts.png"
+								draggable={false}
+								className="pointer-events-none w-[22vw] min-w-[22vw] rounded-[0.3vh] border border-black"
+								alt=""
+							/>
+						</Floating>
+						{/* <motion.img
 							src="/imgs/template.png"
 							className="w-[27.5vw] rounded-[0.3vh] drop-shadow-md drop-shadow-neutral-800/30 border border-black mt-[-5vh] z-1"
 							alt=""
@@ -377,100 +303,80 @@ export default function Home() {
 								repeat: Infinity,
 								ease: "easeInOut",
 							}}
-						/>
+						/> */}
 					</div>
 				</div>
-				<h2 className="text-[6vh] constru-caps mt-[27.5vh]">
+				<h2 className="text-[6vh] constru-caps mt-[28vh]">
 					Make a Website to show it off
 				</h2>
-				<div className="flex-5 relative flex mt-[10vh]">
-					<motion.img
-						src="/imgs/example1.png"
-						className="w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] drop-shadow-md drop-shadow-neutral-800/30  border border-black z-5"
-						alt=""
-						animate={{
-							y: [0, -8, 0],
-							rotate: [0, 1, 0],
-						}}
-						transition={{
-							duration: 3,
-							repeat: Infinity,
-							ease: "easeInOut",
-						}}
-					/>
+				<div className="flex-5 relative flex w-[90vw] items-center justify-center min-h-[60vh] top-[2vh]">
+					<Floating left="0vw" bottom="23vh" rotation={1}>
+						<img
+							src="/imgs/example1.png"
+							draggable={false}
+							className="w-[27.5vw] min-w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] border border-black drop-shadow-md drop-shadow-neutral-800/30"
+							alt=""
+						/>
+					</Floating>
 
-					<motion.img
-						src="/imgs/example2.png"
-						className="w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] drop-shadow-md drop-shadow-neutral-800/30  border border-black ml-[-12vw] mt-[23vh] z-4"
-						alt=""
-						animate={{
-							y: [0, 6, 0],
-							rotate: [0, -1.5, 0],
-						}}
-						transition={{
-							duration: 4,
-							repeat: Infinity,
-							ease: "easeInOut",
-							delay: 0.5,
-						}}
-					/>
+					<Floating left="15.5vw" bottom="0vh" rotation={-1.5}>
+						<img
+							src="/imgs/example2.png"
+							draggable={false}
+							className="w-[27.5vw] min-w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] border border-black drop-shadow-md drop-shadow-neutral-800/30"
+							alt=""
+						/>
+					</Floating>
 
-					<motion.img
-						src="/imgs/example3.png"
-						className="w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] drop-shadow-md drop-shadow-neutral-800/30  border border-black ml-[-11vw] z-3"
-						alt=""
-						animate={{
-							y: [0, -10, 0],
-							rotate: [0, 1.2, 0],
-						}}
-						transition={{
-							duration: 3.5,
-							repeat: Infinity,
-							ease: "easeInOut",
-							delay: 1,
-						}}
-					/>
+					<Floating left="32vw" bottom="23vh" rotation={1.2}>
+						<img
+							src="/imgs/example3.png"
+							draggable={false}
+							className="w-[27.5vw] min-w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] border border-black drop-shadow-md drop-shadow-neutral-800/30"
+							alt=""
+						/>
+					</Floating>
 
-					<motion.img
-						src="/imgs/example4.png"
-						className="w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] drop-shadow-md drop-shadow-neutral-800/30  border border-black ml-[-14vw] mt-[23vh] z-2"
-						alt=""
-						animate={{
-							y: [0, 8, 0],
-							rotate: [0, -1.2, 0],
-						}}
-						transition={{
-							duration: 4.5,
-							repeat: Infinity,
-							ease: "easeInOut",
-							delay: 0.3,
-						}}
-					/>
+					<Floating left="46vw" bottom="0vh" rotation={-1.2}>
+						<img
+							src="/imgs/example4.png"
+							draggable={false}
+							className="w-[27.5vw] min-w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] border border-black drop-shadow-md drop-shadow-neutral-800/30"
+							alt=""
+						/>
+					</Floating>
 
-					<motion.img
-						src="/imgs/example5.png"
-						className="w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] drop-shadow-md drop-shadow-neutral-800/30  border border-black ml-[-11vw] z-1"
-						alt=""
-						animate={{
-							y: [0, -7, 0],
-							rotate: [0, 1, 0],
-						}}
-						transition={{
-							duration: 3.8,
-							repeat: Infinity,
-							ease: "easeInOut",
-							delay: 0.8,
-						}}
-					/>
+					<Floating left="62vw" bottom="23vh" rotation={1}>
+						<img
+							src="/imgs/example5.png"
+							draggable={false}
+							className="w-[27.5vw] min-w-[27.5vw] h-[27.5vh] object-cover rounded-[0.3vh] border border-black drop-shadow-md drop-shadow-neutral-800/30"
+							alt=""
+						/>
+					</Floating>
 				</div>
 			</section>
 
-			<section
+			{/* <section
 				ref={section3Ref}
-				className="min-h-screen flex items-center justify-center relative z-2"
+				className="min-h-screen flex items-center justify-center relative z-2 pt-[5vh]"
 			>
-				<p className="text-[6vh] constru-caps">FAQ</p>
-			</section>
+				<div className="relative w-[20vw] flex items-center justify-center py-[2vh] px-[1vw] bg-white border-[0.2vh] border-black">
+					<p className="text-[3vh] kg-chasing">Drag & Drop</p>
+				</div>
+				<div className="absolute top-[62vh] w-[35vw] flex items-center justify-center py-[2vh] px-[1vw] bg-white border-[0.2vh] border-black">
+					<p className="text-[3vh] kg-chasing">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+						minima sunt earum, sapiente amet cumque.
+					</p>
+				</div>
+				<Letter letter="AI USAGE" left="6vw" bottom="35vh" rotation={-5} />
+				<Letter letter="Contact" left="45vw" bottom="75vh" rotation={5} />
+				<Letter letter="Font Creation" left="6vw" bottom="65vh" rotation={1} />
+				<Letter letter="Submission" left="65vw" bottom="57vh" rotation={1} />
+				<Letter letter="Age" left="82vw" bottom="35vh" rotation={1} />
+			</section> */}
+			<FAQDragSection />
 		</div>
 	);
 }
