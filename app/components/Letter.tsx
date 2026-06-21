@@ -21,7 +21,7 @@ export default function Letter({
 			dragMomentum={false}
 			whileHover={{ scale: 1.05 }}
 			whileTap={{ scale: 1.02 }}
-			className="absolute z-[999] cursor-grab"
+			className="absolute z-999 cursor-grab"
 			style={{
 				left,
 				bottom,

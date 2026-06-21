@@ -24,7 +24,7 @@ export default function Floating({
 			dragMomentum={false}
 			whileHover={{ scale: 1.05 }}
 			whileTap={{ scale: 1.02 }}
-			className="absolute z-[999] cursor-grab min-w-fit"
+			className="absolute z-999 cursor-grab min-w-fit"
 			style={{
 				left,
 				bottom,

@@ -81,7 +81,7 @@ export default function Home() {
 		<div className="min-h-screen w-full">
 			<img
 				src="/imgs/texture-bg.png"
-				className="w-full h-screen fixed top-0 left-0 z-0 opacity-[4%] pointer-events-none"
+				className="w-full h-screen fixed top-0 left-0 z-0 opacity-4 pointer-events-none"
 				alt=""
 			/>
 
@@ -108,7 +108,7 @@ export default function Home() {
 			/>
 			<img
 				src="/imgs/hackclub.svg"
-				className="absolute left-[1vw] top-[0vh] w-[12vw] z-10"
+				className="absolute left-[1vw] top-0 w-[12vw] z-10"
 				alt=""
 			/>
 			<nav
@@ -209,13 +209,13 @@ export default function Home() {
 					Submit
 				</h2> */}
 				<div className="p-[0.4vh] border-[0.2vh] min-w-fit w-fit min-h-fit relative ml-[46vw] mt-[1vh] rounded-[0.2vh] cursor-pointer bg-white">
-					<p className="city-of-boy w-fit text-[5vh] px-[2vw] py-[0.5vh] relative rounded-[0.2vh] w-fit bg-black text-white">
+					<p className="city-of-boy text-[5vh] px-[2vw] py-[0.5vh] relative rounded-[0.2vh] w-fit bg-black text-white">
 						Submit
 					</p>
 				</div>
 			</section>
 
-			<div className="flex w-[100vw] mx-auto items-center justify-between gap-[0.75vh] mt-[-3vh] bg-white relative z-2">
+			<div className="flex w-screen mx-auto items-center justify-between gap-[0.75vh] mt-[-3vh] bg-white relative z-2">
 				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-r-[0.2vh] border-black py-[3vh]">
 					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
 						1 Hour
@@ -290,20 +290,6 @@ export default function Home() {
 								alt=""
 							/>
 						</Floating>
-						{/* <motion.img
-							src="/imgs/template.png"
-							className="w-[27.5vw] rounded-[0.3vh] drop-shadow-md drop-shadow-neutral-800/30 border border-black mt-[-5vh] z-1"
-							alt=""
-							animate={{
-								y: [0, 9, 0],
-								rotate: [0, -1.5, 0],
-							}}
-							transition={{
-								duration: 5.5,
-								repeat: Infinity,
-								ease: "easeInOut",
-							}}
-						/> */}
 					</div>
 				</div>
 				<h2 className="text-[6vh] constru-caps mt-[28vh]">
@@ -357,25 +343,6 @@ export default function Home() {
 				</div>
 			</section>
 
-			{/* <section
-				ref={section3Ref}
-				className="min-h-screen flex items-center justify-center relative z-2 pt-[5vh]"
-			>
-				<div className="relative w-[20vw] flex items-center justify-center py-[2vh] px-[1vw] bg-white border-[0.2vh] border-black">
-					<p className="text-[3vh] kg-chasing">Drag & Drop</p>
-				</div>
-				<div className="absolute top-[62vh] w-[35vw] flex items-center justify-center py-[2vh] px-[1vw] bg-white border-[0.2vh] border-black">
-					<p className="text-[3vh] kg-chasing">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-						minima sunt earum, sapiente amet cumque.
-					</p>
-				</div>
-				<Letter letter="AI USAGE" left="6vw" bottom="35vh" rotation={-5} />
-				<Letter letter="Contact" left="45vw" bottom="75vh" rotation={5} />
-				<Letter letter="Font Creation" left="6vw" bottom="65vh" rotation={1} />
-				<Letter letter="Submission" left="65vw" bottom="57vh" rotation={1} />
-				<Letter letter="Age" left="82vw" bottom="35vh" rotation={1} />
-			</section> */}
 			<FAQDragSection />
 		</div>
 	);
