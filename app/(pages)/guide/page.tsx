@@ -119,6 +119,26 @@ export default function GuidePage() {
 			),
 			image: "/imgs/step8.png",
 		},
+		{
+			title: "Implimenting Font",
+			text: (
+				<div>
+					Add the class of your font to the element/text that you want it to be
+					that way
+				</div>
+			),
+			image: "/imgs/step9.png",
+		},
+		{
+			title: "Lock In",
+			text: (
+				<div>
+					Lock in on creating a website for your font! Make it look good! It can
+					be simple or complex, but make sure it represents your font!
+				</div>
+			),
+			image: "/imgs/example3.png",
+		},
 	];
 
 	useEffect(() => {
