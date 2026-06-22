@@ -13,15 +13,15 @@ export default function FAQDragSection() {
 			answer:
 				"AI may be used for brainstorming, but all final work must be your own.",
 			left: "6vw",
-			bottom: "35vh",
+			bottom: "27vh",
 			rotation: -5,
 		},
 		{
 			id: "contact",
 			label: "Contact",
 			answer: "Reach out through Discord or email if you need help.",
-			left: "45vw",
-			bottom: "75vh",
+			left: "42.5vw",
+			bottom: "65vh",
 			rotation: 5,
 		},
 		{
@@ -29,7 +29,7 @@ export default function FAQDragSection() {
 			label: "Font Creation",
 			answer: "Create your own font and build a website that showcases it.",
 			left: "6vw",
-			bottom: "65vh",
+			bottom: "52vh",
 			rotation: 1,
 		},
 		{
@@ -37,7 +37,7 @@ export default function FAQDragSection() {
 			label: "Submission",
 			answer: "Submit your website link and font files before the deadline.",
 			left: "65vw",
-			bottom: "57vh",
+			bottom: "49vh",
 			rotation: 1,
 		},
 		{
@@ -45,7 +45,7 @@ export default function FAQDragSection() {
 			label: "Age",
 			answer: "Participants must be under 18 years old.",
 			left: "82vw",
-			bottom: "35vh",
+			bottom: "27vh",
 			rotation: 1,
 		},
 	];
@@ -53,7 +53,11 @@ export default function FAQDragSection() {
 	const [activeQuestion, setActiveQuestion] = useState<string | null>(null);
 
 	return (
-		<section className="min-h-screen flex items-center justify-center relative z-2 pt-[5vh]">
+		<>
+			<div className="w-full h-[0.2vh] z-5 bg-black absolute top-[3vh]"></div>
+			<div className="w-full h-[0.2vh] z-5 bg-black absolute top-[3.75vh]"></div>
+			<div className="w-full h-[0.2vh] z-5 bg-black absolute bottom-[1vh]"></div>
+			<div className="w-full h-[0.2vh] z-5 bg-black absolute bottom-[1.75vh]"></div>
 			{/* Drop Zone */}
 			<motion.div
 				layout
@@ -75,7 +79,7 @@ export default function FAQDragSection() {
 			</motion.div>
 
 			{/* Answer Box */}
-			<div className="absolute top-[62vh] w-[35vw] flex items-center justify-center py-[2vh] px-[1vw] bg-white border-[0.2vh] border-black">
+			<div className="absolute top-[57vh] w-[35vw] flex items-center justify-center py-[2vh] px-[1vw] bg-white border-[0.2vh] border-black">
 				<p className="text-[3vh] kg-chasing text-center">
 					{activeQuestion
 						? questions.find((q) => q.id === activeQuestion)?.answer
@@ -135,6 +139,6 @@ export default function FAQDragSection() {
 					</motion.div>
 				);
 			})}
-		</section>
+		</>
 	);
 }

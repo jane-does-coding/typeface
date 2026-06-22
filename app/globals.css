@@ -129,3 +129,15 @@ img {
 	user-select: none !important;
 	-webkit-user-select: none !important;
 }
+
+@font-face {
+	font-family: "my-awesome-font"; /* font name */
+	src: url("/fonts/my-awesome-font.otf") format("opentype");
+	/* If you're using otf its opentype if ttf it's truetype */
+}
+
+.my-font {
+	/* class name dont matter */
+	font-family: "my-awesome-font", serif;
+	/* has to be same as font name */
+}

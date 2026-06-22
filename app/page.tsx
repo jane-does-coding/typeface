@@ -208,11 +208,14 @@ export default function Home() {
 				{/* <h2 className="text-left ml-[46vw] city-of-boy text-[8vh] font-semibold mt-[-2vh]">
 					Submit
 				</h2> */}
-				<div className="p-[0.4vh] border-[0.2vh] min-w-fit w-fit min-h-fit relative ml-[46vw] mt-[1vh] rounded-[0.2vh] cursor-pointer bg-white">
-					<p className="city-of-boy text-[5vh] px-[2vw] py-[0.5vh] relative rounded-[0.2vh] w-fit bg-black text-white">
+				<a
+					href="/"
+					className="p-[0.4vh] border-[0.2vh] min-w-fit h-fit transition-all w-fit min-h-fit relative left-[46vw] mt-[1vh] rounded-[0.2vh] cursor-pointer bg-white group hover:p-[0.2vh] flex items-center justify-center duration-100 hover:drop-shadow-md hover:drop-shadow-neutral-800/50"
+				>
+					<span className="city-of-boy text-[5vh] px-[2vw] py-[0.5vh] transition-all relative rounded-[0.2vh] w-fit bg-black group-hover:py-[0.7vh] group-hover:px-[2.15vw] text-white inline duration-100">
 						Submit
-					</p>
-				</div>
+					</span>
+				</a>
 			</section>
 
 			<div className="flex w-screen mx-auto items-center justify-between gap-[0.75vh] mt-[-3vh] bg-white relative z-2">
@@ -248,18 +251,18 @@ export default function Home() {
 
 			<section
 				ref={section2Ref}
-				className="min-h-fit flex flex-col items-center justify-center max-w-[80vw] mx-auto mt-[14vh] relative z-5"
+				className="min-h-fit flex flex-col items-center justify-center max-w-[80vw] mx-auto mt-[14vh] relative z-5 pb-[10vh]"
 			>
-				<Letter letter="H" left="-3vw" bottom="108vh" rotation={-8} />
-				<Letter letter="E" left="1vw" bottom="87vh" rotation={8} />
-				<Letter letter="I" left="7vw" bottom="99vh" rotation={-5} />
-				<Letter letter="D" left="10vw" bottom="85vh" rotation={5} />
-				<Letter letter="I" left="18vw" bottom="78vh" rotation={-9} />
+				<Letter letter="H" left="-3vw" bottom="113vh" rotation={-8} />
+				<Letter letter="E" left="1vw" bottom="98vh" rotation={8} />
+				<Letter letter="I" left="7vw" bottom="110vh" rotation={-5} />
+				<Letter letter="D" left="10vw" bottom="96vh" rotation={5} />
+				<Letter letter="I" left="18vw" bottom="89vh" rotation={-9} />
 
-				<Letter letter="H" left="70vw" bottom="77vh" rotation={-8} />
-				<Letter letter="I" left="77vw" bottom="88vh" rotation={8} />
+				<Letter letter="H" left="70vw" bottom="89vh" rotation={-8} />
+				<Letter letter="I" left="77vw" bottom="100vh" rotation={8} />
 
-				<Letter letter="!" left="78vw" bottom="145vh" rotation={-8} />
+				<Letter letter="!" left="78vw" bottom="150vh" rotation={-8} />
 
 				<div className="flex gap-[5vw] w-[70vw] items-start justify-between">
 					<div className="text-left flex flex-col items-start justify-start min-w-fit w-full">
@@ -267,11 +270,19 @@ export default function Home() {
 						<p className="sketches-by-duerer text-[7.5vh] w-fit mt-[-1vh]">
 							learning
 						</p>
-						<div className="p-[0.4vh] border mt-[3vh] min-w-fit min-h-fit relative cursor-pointer rounded-[0.2vh] bg-white">
+						<a
+							href="/"
+							className="p-[0.4vh] border mt-[3vh] min-w-fit min-h-fit relative cursor-pointer rounded-[0.2vh] bg-white group hover:p-[0.2vh] flex items-center justify-center duration-100 hover:drop-shadow-md hover:drop-shadow-neutral-800/50 transition-all"
+						>
+							<span className="mx-pixel text-[5vh] px-[2vw] py-[0.5vh] transition-all relative rounded-[0.2vh] w-fit bg-black group-hover:py-[0.7vh] group-hover:px-[2.15vw] text-white inline duration-100">
+								guide
+							</span>
+						</a>
+						{/* <div className="p-[0.4vh] border mt-[3vh] min-w-fit min-h-fit relative cursor-pointer rounded-[0.2vh] bg-white">
 							<p className="mx-pixel text-[5vh] px-[2vw] py-[0.5vh] relative rounded-[0.2vh] w-fit bg-black text-white">
 								guide
 							</p>
-						</div>
+						</div> */}
 					</div>
 					<div className="relative min-h-[60vh] w-full">
 						<Floating left="0" bottom="-3vh" rotation={1}>
@@ -342,8 +353,30 @@ export default function Home() {
 					</Floating>
 				</div>
 			</section>
-
-			<FAQDragSection />
+			<section
+				ref={section3Ref}
+				className="min-h-[92vh] flex items-center justify-center relative z-2 pt-[5vh]"
+			>
+				<FAQDragSection />
+			</section>
+			<footer className="flex items-center justify-between pb-[3vh] pt-[3vh] bg-white top-[-2vh] px-[5vw] relative">
+				<p className="mx-pixel font-semibold text-[3.75vh]">
+					Made with {" <3 "} by Hack Club
+				</p>
+				<div className="flex gap-[2.5vw]">
+					<a href="/" className=" font-semibold kg-chasing text-[2.5vh]">
+						Guide
+					</a>
+					<a href="/" className=" font-semibold kg-chasing text-[2.5vh]">
+						Slack
+					</a>
+					<a href="/" className=" font-semibold kg-chasing text-[2.5vh]">
+						Submit
+					</a>
+				</div>
+				<div className="w-full h-[0.2vh] z-5 bg-black absolute left-0 bottom-[0vh]"></div>
+				<div className="w-full h-[0.2vh] z-5 bg-black absolute left-0 bottom-[0.75vh]"></div>
+			</footer>
 		</div>
 	);
 }
