@@ -374,7 +374,7 @@ export default function Home() {
 						Submit
 					</a>
 				</div>
-				<div className="w-full h-[0.2vh] z-5 bg-black absolute left-0 bottom-[0vh]"></div>
+				<div className="w-full h-[0.2vh] z-5 bg-black absolute left-0 bottom-0"></div>
 				<div className="w-full h-[0.2vh] z-5 bg-black absolute left-0 bottom-[0.75vh]"></div>
 			</footer>
 		</div>

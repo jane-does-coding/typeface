@@ -262,7 +262,7 @@ export default function GuidePage() {
 									{step.title}
 								</h2>
 
-								<div className="kg-chasing font-medium text-[3vh] mt-[2vh] leading-[1.5]">
+								<div className="kg-chasing font-medium text-[3vh] mt-[2vh] leading-normal">
 									{step.text}
 								</div>
 							</div>
