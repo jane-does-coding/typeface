@@ -271,7 +271,7 @@ export default function Home() {
 							learning
 						</p>
 						<a
-							href="/"
+							href="/guide"
 							className="p-[0.4vh] border mt-[3vh] min-w-fit min-h-fit relative cursor-pointer rounded-[0.2vh] bg-white group hover:p-[0.2vh] flex items-center justify-center duration-100 hover:drop-shadow-md hover:drop-shadow-neutral-800/50 transition-all"
 						>
 							<span className="mx-pixel text-[5vh] px-[2vw] py-[0.5vh] transition-all relative rounded-[0.2vh] w-fit bg-black group-hover:py-[0.7vh] group-hover:px-[2.15vw] text-white inline duration-100">
@@ -364,7 +364,7 @@ export default function Home() {
 					Made with {" <3 "} by Hack Club
 				</p>
 				<div className="flex gap-[2.5vw]">
-					<a href="/" className=" font-semibold kg-chasing text-[2.5vh]">
+					<a href="/guide" className=" font-semibold kg-chasing text-[2.5vh]">
 						Guide
 					</a>
 					<a href="/" className=" font-semibold kg-chasing text-[2.5vh]">

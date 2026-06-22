@@ -11,7 +11,7 @@ export default function FAQDragSection() {
 			id: "ai",
 			label: "AI USAGE",
 			answer:
-				"AI may be used for brainstorming, but all final work must be your own.",
+				"AI is NOT permitted in art, and you can use assist of AI in your code, UNDER 25% AI ",
 			left: "6vw",
 			bottom: "27vh",
 			rotation: -5,
@@ -19,7 +19,8 @@ export default function FAQDragSection() {
 		{
 			id: "contact",
 			label: "Contact",
-			answer: "Reach out through Discord or email if you need help.",
+			answer:
+				"Reach out through Slack #typeface-ysws or DM Jenny or Max H if you need help.",
 			left: "42.5vw",
 			bottom: "65vh",
 			rotation: 5,
@@ -27,7 +28,8 @@ export default function FAQDragSection() {
 		{
 			id: "font",
 			label: "Font Creation",
-			answer: "Create your own font and build a website that showcases it.",
+			answer:
+				"Create your own font and build a website that showcases it, there are guides!.",
 			left: "6vw",
 			bottom: "52vh",
 			rotation: 1,
@@ -35,7 +37,7 @@ export default function FAQDragSection() {
 		{
 			id: "submission",
 			label: "Submission",
-			answer: "Submit your website link and font files before the deadline.",
+			answer: "Submit your website link and github link!",
 			left: "65vw",
 			bottom: "49vh",
 			rotation: 1,

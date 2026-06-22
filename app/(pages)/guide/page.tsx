@@ -1,10 +1,40 @@
 "use client";
 import Letter from "@/app/components/Letter";
 import { motion } from "framer-motion";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 
 export default function GuidePage() {
 	const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+	const [activeStep, setActiveStep] = useState(0);
+	const [expanded, setExpanded] = useState(false);
+
+	const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const scrollMiddle = window.scrollY + window.innerHeight / 2;
+
+			let current = 0;
+
+			stepRefs.current.forEach((section, index) => {
+				if (!section) return;
+
+				if (scrollMiddle >= section.offsetTop) {
+					current = index;
+				}
+			});
+
+			setActiveStep(current);
+		};
+
+		handleScroll();
+
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
 
 	const steps = [
 		{
@@ -108,6 +138,30 @@ export default function GuidePage() {
 
 	return (
 		<div className="min-h-screen bg-white">
+			<nav
+				onClick={() => setExpanded((prev) => !prev)}
+				className={`fixed top-0 right-0 w-[16vw] border-b-[0.2vh] border-l-[0.2vh] border-black rounded-bl-[0.3vh] overflow-hidden z-999 cursor-pointer transition-all duration-500 ease-in-out bg-white ${
+					expanded ? "h-[64vh]" : "h-[8vh]"
+				}`}
+			>
+				<div
+					className="absolute top-0 left-0 w-full transition-transform duration-500 ease-in-out"
+					style={{
+						transform: expanded
+							? "translateY(0)"
+							: `translateY(-${activeStep * 8}vh)`,
+					}}
+				>
+					{steps.map((_, index) => (
+						<p
+							key={index}
+							className="h-[8vh] flex items-center justify-center text-[2.7vh] kg-chasing border-b-[0.2vh] border-black"
+						>
+							Step {index + 1}
+						</p>
+					))}
+				</div>
+			</nav>
 			{/* Texture */}
 			<img
 				src="/imgs/texture-bg.png"
@@ -152,10 +206,12 @@ export default function GuidePage() {
 			/>
 
 			{/* Floating Letters */}
-			<Letter letter="A" left="8vw" bottom="75vh" rotation={-8} />
-			<Letter letter="B" left="84vw" bottom="75vh" rotation={6} />
-			<Letter letter="G" left="10vw" bottom="35vh" rotation={-4} />
-			<Letter letter="R" left="88vw" bottom="25vh" rotation={8} />
+			<div className="absolute inset-0 z-15">
+				<Letter letter="A" left="8vw" bottom="75vh" rotation={-8} />
+				<Letter letter="B" left="84vw" bottom="75vh" rotation={6} />
+				<Letter letter="G" left="10vw" bottom="35vh" rotation={-4} />
+				<Letter letter="R" left="88vw" bottom="35vh" rotation={8} />
+			</div>
 
 			{/* Hero */}
 			<section className="min-h-[70vh] bg-blue-200/0 flex flex-col items-center justify-center relative z-10">
@@ -190,6 +246,9 @@ export default function GuidePage() {
 				{steps.map((step, i) => (
 					<div
 						key={i}
+						ref={(el) => {
+							stepRefs.current[i - 1] = el;
+						}}
 						className="grid grid-cols-2 gap-[6vw] px-[8vw] min-h-[130vh]"
 					>
 						{/* TEXT */}
