@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
 	title: "Typeface",
 	description: "Make a website with your own font - win prizes!",
+	icons: {
+		icon: "/typeface.ico",
+	},
 };
 
 export default function RootLayout({
