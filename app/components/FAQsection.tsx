@@ -45,7 +45,7 @@ export default function FAQDragSection() {
 		{
 			id: "age",
 			label: "Age",
-			answer: "Participants must be under 18 years old.",
+			answer: "Participants must be under 18 or under.",
 			left: "82vw",
 			bottom: "27vh",
 			rotation: 1,
