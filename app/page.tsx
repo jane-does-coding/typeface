@@ -113,7 +113,7 @@ export default function Home() {
 			/>
 			<nav
 				onClick={() => setExpanded((prev) => !prev)}
-				className={`fixed top-0 right-0 w-[16vw] border-b-[0.2vh] border-l-[0.2vh] border-black rounded-bl-[0.3vh] overflow-hidden z-50 cursor-pointer transition-all duration-500 ease-in-out bg-white ${
+				className={`fixed top-0 right-0 w-[16vw] border-b-[0.2vh] border-l-[0.2vh] border-black rounded-bl-[0.3vh] overflow-hidden z-999 cursor-pointer transition-all duration-500 ease-in-out bg-white ${
 					expanded ? "h-[24vh]" : "h-[8vh]"
 				}`}
 			>
@@ -209,7 +209,7 @@ export default function Home() {
 					Submit
 				</h2> */}
 				<a
-					href="/"
+					href="https://forms.hackclub.com/t/oH3aNgm2pSus"
 					className="p-[0.4vh] border-[0.2vh] min-w-fit h-fit transition-all w-fit min-h-fit relative left-[46vw] mt-[1vh] rounded-[0.2vh] cursor-pointer bg-white group hover:p-[0.2vh] flex items-center justify-center duration-100 hover:drop-shadow-md hover:drop-shadow-neutral-800/50"
 				>
 					<span className="city-of-boy text-[5vh] px-[2vw] py-[0.5vh] transition-all relative rounded-[0.2vh] w-fit bg-black group-hover:py-[0.7vh] group-hover:px-[2.15vw] text-white inline duration-100">
@@ -218,16 +218,44 @@ export default function Home() {
 				</a>
 			</section>
 
+			<Floating left="6vw" bottom="-32vh" rotation={-3}>
+				<img
+					src="/imgs/book.png"
+					className="w-[7vw] select-none border border-black p-[1vh] bg-white rounded-[0.2vh] pointer-events-none"
+					alt=""
+				/>
+			</Floating>
+			<Floating left="35vw" bottom="-17vh" rotation={-3}>
+				<img
+					src="/imgs/frog.png"
+					className="w-[8vw] select-none border border-black p-[1vh] bg-white rounded-[0.2vh] pointer-events-none"
+					alt=""
+				/>
+			</Floating>
+			<Floating left="60vw" bottom="-8vh" rotation={9}>
+				<img
+					src="/imgs/snoopy.png"
+					className="w-[7vw] select-none border border-black p-[1vh] bg-white rounded-[0.2vh] pointer-events-none"
+					alt=""
+				/>
+			</Floating>
+			<Floating left="85vw" bottom="-27vh" rotation={3}>
+				<img
+					src="/imgs/ereader.png"
+					className="w-[7vw] select-none border border-black p-[1vh] bg-white rounded-[0.2vh] pointer-events-none"
+					alt=""
+				/>
+			</Floating>
 			<div className="flex w-screen mx-auto items-center justify-between gap-[0.75vh] mt-[-3vh] bg-white relative z-2">
 				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-r-[0.2vh] border-black py-[3vh]">
 					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
-						1 Hour
+						2 Hour
 					</p>
 					<p className="kg-chasing text-[2.5vh] text-center">
 						Custom Stickers!!!
 					</p>
 				</div>
-				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-x-[0.2vh] border-black py-[3vh]">
+				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-x-[0.2vh] border-black py-[3vh] relative z-5">
 					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
 						5 Hours
 					</p>
@@ -235,10 +263,30 @@ export default function Home() {
 				</div>
 				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-x-[0.2vh] border-black py-[3vh]">
 					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
-						10 Hours
+						13 Hours
 					</p>
 					<p className="kg-chasing text-[2.5vh] text-center">T-Shirt</p>
 				</div>
+			</div>
+			<div className="w-full h-[0.2vh] bg-black relative z-5"></div>
+			<div className="w-full h-[0.2vh] bg-black mt-[0.75vh] relative z-5"></div>
+
+			<div className="flex w-screen mx-auto items-center justify-between gap-[0.75vh] mt-[0vh] bg-white relative z-2">
+				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-r-[0.2vh] border-black py-[3vh]">
+					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
+						3 Hour
+					</p>
+					<p className="kg-chasing text-[2.5vh] text-center">
+						Stackable Book Grant
+					</p>
+				</div>
+
+				{/* <div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-x-[0.2vh] border-black py-[3vh]">
+					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
+						10 Hours
+					</p>
+					<p className="kg-chasing text-[2.5vh] text-center">T-Shirt</p>
+				</div> */}
 				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-l-[0.2vh] border-black py-[3vh]">
 					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
 						15 Hours
@@ -367,10 +415,16 @@ export default function Home() {
 					<a href="/guide" className=" font-semibold kg-chasing text-[2.5vh]">
 						Guide
 					</a>
-					<a href="/" className=" font-semibold kg-chasing text-[2.5vh]">
+					<a
+						href="https://hackclub.enterprise.slack.com/archives/C0BBMA16677"
+						className=" font-semibold kg-chasing text-[2.5vh]"
+					>
 						Slack
 					</a>
-					<a href="/" className=" font-semibold kg-chasing text-[2.5vh]">
+					<a
+						href="https://forms.hackclub.com/t/oH3aNgm2pSus"
+						className=" font-semibold kg-chasing text-[2.5vh]"
+					>
 						Submit
 					</a>
 				</div>

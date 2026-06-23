@@ -310,7 +310,7 @@ export default function GuidePage() {
 				<h2 className="sketches text-[8vh] mt-[5vh]">Ready?</h2>
 
 				<a
-					href="/submit"
+					href="https://forms.hackclub.com/t/oH3aNgm2pSus"
 					className="p-[0.4vh] border-[0.2vh] rounded-[0.2vh] bg-white group hover:p-[0.2vh] transition-all mt-[1vh]"
 				>
 					<span className="city-of-boy text-[5vh] px-[2vw] py-[0.5vh] bg-black text-white rounded-[0.2vh] inline-block group-hover:px-[2.15vw] group-hover:py-[0.7vh] transition-all">
