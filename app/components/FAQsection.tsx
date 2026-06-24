@@ -37,7 +37,8 @@ export default function FAQDragSection() {
 		{
 			id: "submission",
 			label: "Submission",
-			answer: "Submit your website link and github link!",
+			answer:
+				"Submit your website link and github link! Log time with Lapse for art and Hackatime for code!",
 			left: "65vw",
 			bottom: "49vh",
 			rotation: 1,

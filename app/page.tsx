@@ -166,8 +166,8 @@ export default function Home() {
 				<Letter letter="U" left="69vw" bottom="78vh" rotation={2} />
 				<Letter letter="B" left="78vw" bottom="80vh" rotation={8} />
 
-				<h2 className="text-left ml-[12vw] kg-chasing text-[6vh] pt-[20vh]">
-					Ptss
+				<h2 className="text-left ml-[12vw] kg-chasing text-[5vh] pt-[20vh] font-semibold mb-[1vh]">
+					June 23rd - July 7th
 				</h2>
 				<h1 className="sketches-by-duerer text-[17.5vh] mx-auto w-fit mt-[-3vh]">
 					typeface
@@ -218,10 +218,10 @@ export default function Home() {
 				</a>
 			</section>
 
-			<Floating left="6vw" bottom="-32vh" rotation={-3}>
+			<Floating left="3vw" bottom="-23vh" rotation={-3}>
 				<img
 					src="/imgs/book.webp"
-					className="w-[7vw] select-none border border-black p-[1vh] bg-white rounded-[0.2vh] pointer-events-none"
+					className="w-[6vw] select-none border border-black p-[1vh] bg-white rounded-[0.2vh] pointer-events-none"
 					alt=""
 				/>
 			</Floating>
@@ -239,9 +239,16 @@ export default function Home() {
 					alt=""
 				/>
 			</Floating>
-			<Floating left="85vw" bottom="-27vh" rotation={3}>
+			<Floating left="90vw" bottom="-27vh" rotation={3}>
 				<img
 					src="/imgs/ereader.webp"
+					className="w-[7vw] select-none border border-black p-[1vh] bg-white rounded-[0.2vh] pointer-events-none"
+					alt=""
+				/>
+			</Floating>
+			<Floating left="65vw" bottom="-33vh" rotation={3}>
+				<img
+					src="/imgs/procreate.png"
 					className="w-[7vw] select-none border border-black p-[1vh] bg-white rounded-[0.2vh] pointer-events-none"
 					alt=""
 				/>
@@ -278,6 +285,14 @@ export default function Home() {
 					</p>
 					<p className="kg-chasing text-[2.5vh] text-center">
 						Stackable Book Grant
+					</p>
+				</div>
+				<div className="flex flex-col items-center justify-center w-full flex-1 px-0 border-x-[0.2vh] border-black py-[3vh] relative z-5">
+					<p className="kg-chasing text-[3vh] font-semibold mb-[0.75vh]">
+						3 Hours
+					</p>
+					<p className="kg-chasing text-[2.5vh] text-center">
+						Art Software Grant
 					</p>
 				</div>
 
